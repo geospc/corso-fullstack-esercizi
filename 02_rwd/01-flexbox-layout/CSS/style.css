@@ -1,0 +1,122 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: open;
+    src: url(../CSS/fonts/opensans-regular-webfont.woff2),
+        url(../CSS/fonts/opensans-regular-webfont.woff),
+        url(../CSS/fonts/OpenSans-Regular.ttf);
+}
+
+body{
+    border: 5px solid red;
+    /* max-width: 600px; */
+    margin: 0 auto;
+    font-family: "open";
+}
+
+header{
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 10px;
+    
+}
+
+#logo{  
+    align-content: center;
+}
+#logo img{
+    display: block; 
+}
+header .language{
+    font-size: 0.9em;
+    
+}
+
+header a{
+    display: inline-block;
+    color: black;
+    padding: 7px 10px;
+    background-color: rgb(255, 187, 0);
+    text-decoration: none;
+    gap: 20px;
+}
+
+main article{
+    background-color: #e7e7e7;
+    padding: 10px 5px;
+    margin: 10px 0;
+    font-size: 0.9em;
+}
+
+main .box-uno, .box-due{
+    padding: 20px 10px 20px 10px;
+    margin-bottom: 10px;
+}
+
+main .box-uno{
+    background-color: bisque;
+    
+}
+main .box-due{
+    background-color: rgb(255, 196, 226);
+    
+}
+main  h3{
+    text-align: center;
+    margin: 0;
+    padding-bottom: 10px;
+}
+main  img{
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+footer{
+    background-color: rgb(47, 255, 168);
+    text-align: center;
+    padding: 20px;
+}
+
+@media screen and (min-width: 600px) {
+    /* body{
+        min-width: 600px;
+    } */
+    main{
+        display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+    }
+    .box-uno, .box-due{
+        width: 49.5%;
+        
+    }
+    /* main div img{
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    } */
+}
+@media screen and (min-width: 1024px) {
+    main{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    article{
+        order: 2;
+        width: 50%;
+    }
+    .box-uno{
+        order: 1;
+        width: 24.5%;
+        margin-top: 10px;
+    }
+     .box-due{
+        order: 3;
+        width: 24.5%;
+        margin-top: 10px;
+    }
+}

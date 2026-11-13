@@ -1,0 +1,14 @@
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+
+%liste{
+    margin: 0;
+    list-style: none;
+    padding-left: 0;
+}
+
+%colonne{
+    padding: 0 0 5px 5px;
+    border: 2px solid black;
+    font-size: .9em;
+}

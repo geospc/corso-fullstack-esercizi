@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Il modulo dei contatti</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+        <div id="intestazione">
+            <div class="titolo">
+                <h1>Contattaci</h1>
+                <p>Vuoi saperne di più sui nostri corsi web? Scrivici e prenota un appuntamento con noi. Ti aiuteremo a trovare il corso su misura per te.</p>
+            </div>
+            <div class="logo">
+                <img src="immagini/logo-vettoriale.png" alt="Logo Labforweb">
+            </div>
+        </div>
+
+        <div id="bigbox">
+            <div class="box-left">
+                <h2>Scrivi il tuo messaggio</h2>
+                <p>Scrivici e ti risponderemo il prima possibile</p>
+                
+                <div id="form">
+                    <div class="form-left">
+                        <div class="field">
+                            <label for="name">Il tuo nome</label>
+                            <input type="text" name="name" id="name" placeholder="Nome e Cognome">
+                        </div>
+                        
+                        <div class="field">
+                            <label for="tel">Il tuo telefono</label>
+                            <input type="tel" name="tel" id="tel" placeholder="Scrivi il tuo telefono">  
+                        </div>
+                        
+                        <div class="select field">
+                            <label for="corso">A quale corso sei interessato?</label>
+                            <select name="corso" id="corso">
+                                <option></option>
+                                <option>Corso Front End Development</option>
+                                <option>Corso Back End Developmente</option>
+                                <option>Corso Full Stack Development</option>
+                                <option>Corso Cyber Security Specialist</option>
+                                <option>Non ho ancora la idee chiare</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-right">
+                        <div class="field">
+                            <label for="email">La tua email</label>
+                            <input type="email" name="mail" id="email" placeholder="you@email.it">
+                        </div>
+                        
+                        <div class="field">
+                            <label for="azienda">La tua azienda</label>
+                            <input type="text" name="azienda" id="azienda" placeholder="Il nome della tua azienda">  
+                        </div>
+                        
+                        <div class="select field">
+                            <label for="orario">A che ora possiamo ricontattarti?</label>
+                            <select name="orario" id="orario">
+                                <option></option>
+                                <option>mattina 10.00/13.00</option>
+                                <option>pranzo 13.00/14.00</option>
+                                <option>pomeriggio 15.00/18.00</option>
+                                <option>sera 18.00/20.00</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="form-2">
+                    <div class="field">
+                        <label for="testo"></label>
+                        <textarea name="testo" id="testo" placeholder="Scrivi il tuo messaggio qui"></textarea>
+                    </div>
+                    <div class="field">
+                        <input type="checkbox" name="privacy" id="privacy" class="campo">
+                        <label for="privacy" class="privacy">Ho letto l'informativa sulla privacy e accetto le condizioni</label>
+                    </div>
+
+                    <div class="field">
+                        <button>SUBMIT</button>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <div class="box-right">
+                <h2>I nostri contatti</h2>
+                <hr>
+                <ul>
+                    <li>
+                        <img src="immagini/map.png" alt="Position Icon">
+                        <a href="https://www.google.com/maps/place/LABFORWEB/@41.8629905,12.4535147,16z/data=!3m1!4b1!4m6!3m5!1s0x132f601da414ff73:0x50af1f8c10d58d13!8m2!3d41.8629905!4d12.4560843!16s%2Fg%2F12cnyng4n?authuser=0&entry=ttu&g_ep=EgoyMDI2MDUxNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Via Francesco Saverio Solari 16, Roma</a>
+                    </li>
+                    <li>
+                        <img src="immagini/mail.png" alt="Email Icon">
+                        <a href="mailto:info@labfortraining.it">info@labfortraining.it</a>
+                    </li>
+                    <li>
+                        <img src="immagini/phone.png" alt="Phone Icon">
+                        <a href="tel:+390658205135">+39 0658205135</a>
+                    </li>
+                </ul>
+                <hr>
+                <div class="social">
+                    <a href="#"><img src="immagini/twitter.png" alt="Twitter Icon"></a>
+                    <a href="https://www.instagram.com/labforweb.it" target="_blank"><img src="immagini/instagram.png" alt="Instagram Icon"></a>
+                    <a href="https://www.facebook.com/labforweb" target="_blank"><img src="immagini/facebook.png" alt="Facebook Icon"></a>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+    
+</body>
+</html>

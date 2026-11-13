@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Document</title>
+    <script src="js/script.js" defer></script>
+    <!-- <script src="js/script2.js" defer></script> -->
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <h1>RecipeLab OOP</h1>
+        </div>
+        <div class="toolbar">
+          <input id="q" placeholder="Cerca per testo (es. 'pasta', 'salad') …" />
+          <select id="mealType">
+            <option value="">Tipo di pasto</option>
+            <option value="dinner">Dinner</option>
+            <option value="lunch">Lunch</option>
+            <option value="breakfast">Breakfast</option>
+            <option value="snack">Snack</option>
+            <option value="tea">Teatime</option>
+          </select>
+          <select id="sortBy">
+            <option value="">Ordina…</option>
+            <option value="abc">Nome ↑</option>
+            <option value="rating">Rating ↑</option>
+            <option value="prep">Tempo prep ↑</option>
+          </select>
+          <button id="newBtn" class="btn-primary">+ Nuova ricetta</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <main>
+        <section>
+          <div id="cards" class="grid" aria-live="polite">
+
+        <!--<article class='card'>
+              <img alt="" src="..." loading="lazy">
+              <div class="content">
+                <div class="title"> Nome ricetta </div>
+                <div class="muted"> Tipo di cucina (Asiatica, Italiana, ...) </div>
+                <div class="tags">
+                  <span class="tag"> Tags (Pizza, Dessert, Vegetarian, ...) </span>
+                </div>
+              </div>
+
+              <div class="actions">
+                <span class="pill"> ⭐Rating </span>
+                <span class="pill"> Tipo di pasto (Lunch, Dinner, ...) </span>
+                <span class="pill"> Minuti di preparazione </span>
+                <button class="btn"> Dettaglio </button>
+              </div>
+            </article> -->
+
+          </div>
+          <div id="pager" class="pagination"></div>
+        </section>
+
+        <aside id="detail">
+          <h2>Dettaglio ricetta</h2>
+          <p class="muted">
+            Seleziona una card per vedere ingredienti e istruzioni.
+          </p>
+          <div class="divider"></div>
+          <div id="detailContent" class="empty">
+            Nessuna ricetta selezionata.
+
+        <!--<div>
+              <img alt="" src="..." style="width:100%; height:180px; object-fit:cover; border-radius:10px">
+              <h3 style="margin: 10px 0 6px 0"> Nome ricetta </h3>
+              <div class="muted"> Tipo di cucina (Asiatica, Italiana, ...) </div>
+
+              <div class="kpis">
+                <span class="pill"> ⭐Rating </span>
+                <span class="pill"> Difficoltà ricetta </span>
+                <span class="pill"> Tipo di pasto (Lunch, Dinner, ...) </span>
+                <span class="pill"> Tags (Pizza, Dessert, Vegetarian, ...) </span>
+              </div>
+
+              <h4> Ingredienti </h4>
+              <div class="ingredients">
+                <span class="pill"> Ingrediente 1 </span>
+                <span class="pill"> Ingrediente 2 </span>
+                <span class="pill"> Ingrediente 3 </span>
+                ...
+              </div>
+
+              <h4>Passi</h4>
+              <ol class="steps">
+                <li> Primo Passaggio </li>
+                <li> Secondo Passaggio </li>
+                <li> Terzo Passaggio </li>
+                ...
+              </ol>
+            </div> -->
+          </div>
+        </aside>
+      </main>
+
+      <footer>© RecipeLab</footer>
+    </div>
+
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+
+    <!-- Modal "Nuova ricetta"-->
+    <dialog id="modal">
+      <form method="dialog" id="newForm" style="width: 50%; background:#0b1220; color:var(--text); border:1px solid var(--border); border-radius:14px; padding:16px; margin: 10% auto;">
+        <h3 style="margin:0 0 10px 0">Crea nuova ricetta</h3>
+        <div class="help">La creazione è simulata dall'API e restituisce un nuovo id.</div>
+        <div class="divider"></div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px">
+          <label>Nome<input name="name" required placeholder="Es. Spaghetti al pomodoro" /></label>
+          <label>Immagine (URL)<input name="image" placeholder="https://…" /></label>
+          <label>Difficoltà<select name="difficulty" required><option>Easy</option><option>Medium</option><option>Hard</option></select></label>
+          <label>Meal type<select name="meal" required><option value="">—</option><option>Dinner</option><option>Lunch</option><option>Breakfast</option><option>Snack</option><option>Teatime</option></select></label>
+          <label>Prep (min)<input name="prep" type="number" min="0" value="10"/></label>
+          <label>Cook (min)<input name="cook" type="number" min="0" value="15"/></label>
+          <label>Tags (virgola)<input name="tags" placeholder="italian, pasta"required /></label>
+          <label>Rating<input name="rating" type="number" step="0.1" min="0" max="5" value="4.5"/></label>
+        </div>
+        <label style="display:block; margin-top:8px">Ingredienti (1 per riga)
+          <textarea name="ingredients" rows="4" placeholder="spaghetti
+            pomodori pelati
+            aglio
+            olio evo
+            sale"></textarea>
+        </label>
+        <label style="display:block; margin-top:8px">Istruzioni (1 per riga)
+          <textarea name="instructions" rows="4" placeholder="Cuoci la pasta
+            Prepara il sugo
+            Salta e servi"></textarea>
+        </label>
+        <div class="divider"></div>
+        <div style="display:flex; gap:8px; justify-content:flex-end">
+          <button class="btn" value="cancel">Annulla</button>
+          <button class="btn-primary" value="default" id="saveBtn">Salva</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+main{
+    max-width: 400px;
+    margin: auto;
+    
+}
+
+h1{
+    text-align: center;
+    font-size: 2.2em;
+}
+
+#semaforo{
+    width: 150px;
+    height: 350px;
+    background-color: #222;
+    border-radius: 30px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; */
+}
+
+.luce{
+    width: 90px;
+    height: 90px;
+    border: 2px solid black;
+    background-color: #4d4d4d;
+    border-radius: 50%;
+    margin: 18px auto;
+}
+
+.attiva-rossa{
+    background-color: red;
+    
+}
+
+.attiva-gialla{
+    background-color: yellow;
+}
+
+.attiva-verde{
+    background-color: green;
+}
+
+#messaggio {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+button{
+    padding: 15px 20px;
+    margin: 40px auto;
+    display: block;
+    font-size: 1.5em;
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}

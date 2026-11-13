@@ -1,0 +1,51 @@
+const tagH1=document.querySelector('h1');
+const btn_start=document.querySelector('button:nth-of-type(1)');
+const btn_stop=document.querySelector('button:nth-of-type(2)');
+const btn_reset=document.querySelector('button:last-of-type');
+
+let num=10;
+
+// let timer=setInterval(gestisciTimer, 1000);
+let timer;
+
+
+
+btn_stop.addEventListener('click', stopTimer);
+
+btn_start.addEventListener('click', avviaTimer);
+
+btn_reset.addEventListener('click', resetTimer);
+
+
+function avviaTimer(){
+    stopTimer();
+    timer=setInterval(gestisciTimer, 1000);
+}
+function stopTimer(){
+    clearInterval(timer);
+}
+
+function resetTimer(){
+    num=10;
+    tagH1.innerHTML=num;
+    tagH1.style.color='black';
+    // btn_start.disabled=false;
+    btn_start.style.pointerEvents='auto';
+    stopTimer();
+    // avviaTimer();
+}
+
+function gestisciTimer(){
+    num--;
+    tagH1.innerHTML=num;
+
+    if(num===0){
+        stopTimer();
+        tagH1.innerHTML='DRIIIIINNNNNNNNN!';
+        tagH1.style.color='red';
+        // btn_start.disabled=true;
+        btn_start.style.pointerEvents='none';
+    }
+}
+
+

@@ -1,0 +1,127 @@
+const campo=document.querySelector('input');
+const btn=document.querySelector('button')
+const btn_reset=document.querySelector('button:last-of-type')
+const msg_errore=document.getElementById('messaggio')
+const msg=document.getElementById('indovina')
+const tentativi_rimasti=document.getElementById('tentativi');
+const time=document.getElementById('tempo')
+
+let numeroCasuale;
+let numTentativi=3;
+let secondi=30;
+let timer;
+let numeriProvati=[];
+
+let numero;
+
+
+
+
+numeroCasuale=Math.floor(Math.random()*100)+1;
+console.log(numeroCasuale);
+
+btn.addEventListener('click', scegliNumero);
+
+btn_reset.addEventListener('click', function(){
+    location.reload();
+})
+
+campo.addEventListener('focus', avviaTimer)
+
+
+function scegliNumero(){
+    numero=parseInt(campo.value.trim());
+    controlloInput();
+}
+
+function controlloInput(){
+    if(isNaN(numero)){
+        msg_errore.innerHTML='Devi inserire un numero';
+        msg_errore.style.color='red';
+        msg.innerHTML='';
+    }else if(numero<1){
+        msg_errore.innerHTML='Devi inserire un numero più grande di 0';
+        msg_errore.style.color='red';
+        msg.innerHTML='';
+    }else if(numero>100){
+        msg_errore.innerHTML='Devi inserire un numero più piccolo di 100';
+        msg_errore.style.color='red';
+        msg.innerHTML='';
+    }else{
+        msg_errore.innerHTML='';
+        controllaDoppio();
+    }
+}
+
+
+function controllaDoppio(){
+    if(numeriProvati.includes(numero)){
+        msg_errore.innerHTML='Hai già provato questo numero';
+        msg_errore.style.color='red';
+    }else{
+        numeriProvati[numeriProvati.length] = numero;
+        giocaTurno();
+    }
+}
+
+function giocaTurno(){
+    if(numTentativi>0){
+        numTentativi--;
+
+        if(numero===numeroCasuale){
+            vittoria();
+        }else if(numero>numeroCasuale){
+            msg.innerHTML='Troppo alto! Riprova'
+            msg.style.color='red';
+            tentativi_rimasti.innerHTML='Hai ancora '+ numTentativi +' tentativi.'
+        }else{
+            msg.innerHTML='Troppo basso! Riprova'
+            msg.style.color='red';
+            tentativi_rimasti.innerHTML='Hai ancora '+ numTentativi +' tentativi.'
+            
+        }
+    }else{
+        gameOver();
+    }   
+}
+
+
+function vittoria(){
+    msg.innerHTML='VITTORIA!';
+    msg.style.color='green';
+    btn.disabled=true;
+    campo.disabled=true;
+    tentativi_rimasti.innerHTML='';
+    stopTimer();
+}
+
+function gameOver(){
+    btn.disabled=true;
+    campo.disabled=true;
+    msg.innerHTML='GAME OVER!'
+    tentativi_rimasti.innerHTML='Il numero era '+numeroCasuale;
+
+    stopTimer();
+}
+
+function avviaTimer(){
+    stopTimer();
+    time.innerHTML=secondi;
+    timer=setInterval(gestisciTimer,1000);
+}
+
+function stopTimer(){
+    clearInterval(timer)
+}
+
+function gestisciTimer(){
+    secondi--;
+    time.innerHTML=secondi;
+    if(secondi===0){
+        stopTimer();
+        msg.innerHTML='TIME OUT!';
+        btn.disabled=true;
+        campo.disabled=true;
+        tentativi_rimasti.innerHTML='Il numero era '+numeroCasuale;
+    }
+}

@@ -1,0 +1,53 @@
+const griglia=document.getElementById('gioco');
+const box=document.querySelector('ul');
+const scritte=document.getElementById('fine');
+const span_bloccaGioco=box.nextElementSibling;
+const num_click=document.querySelector('#fine p span')
+const btn_reload=document.getElementById('new');
+
+console.log(num_click);
+
+let caselle=16;
+let bomba=Math.floor(Math.random()*caselle); 
+
+
+let click=0
+
+
+for(let i=0; i<caselle; i++){
+
+    if(i===bomba){
+      box.innerHTML+='<li class="bomba"></li>';  
+    }else{
+        box.innerHTML+='<li></li>'; 
+    }
+    
+}
+
+const img=document.querySelectorAll('li');
+
+for(let i=0; i<img.length; i++){
+    // img[i].classList.add('bomba')
+    img[i].addEventListener('click', gioco)
+    
+}
+
+function gioco(){
+    click++
+    if(this.classList.contains('bomba')){
+        // console.log(this);
+        scritte.style.display='block';
+        this.style.backgroundImage='url(immagini/bomb.png)';
+        num_click.innerHTML=click
+        span_bloccaGioco.classList.add('bloccaGioco');
+        num_click='click';
+ 
+    }else{
+        this.style.backgroundImage='url(immagini/rainbow.png)'
+    }
+}
+
+btn_reload.addEventListener('click', function(){
+    location.reload();
+})
+

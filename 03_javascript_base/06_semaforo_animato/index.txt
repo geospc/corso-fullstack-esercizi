@@ -1,0 +1,67 @@
+
+const luce_rossa=document.getElementById('rosso');
+const luce_gialla=document.getElementById('giallo');
+const luce_verde=document.getElementById('verde');
+const msg=document.getElementById('messaggio');
+const btn=document.querySelector('button');
+
+let timer;
+let startSemaforo=true;
+
+let luceAttuale='';
+
+btn.addEventListener('click', avvia);
+
+function avvia(){
+    if(startSemaforo===true){
+        cambioColore();
+        timer=setInterval(cambioColore, 2000);
+        startSemaforo=false;
+    }else{
+        clearInterval(timer);
+        startSemaforo=true;
+    }
+}
+
+// function cambioColore(){
+//     if(luce_rossa.classList.contains('attiva-rossa')){
+//         luce_rossa.classList.remove('attiva-rossa');
+
+//         luce_gialla.classList.add('attiva-gialla');
+
+//         msg.innerHTML='Giallo: Attenzione!'
+//     }else if(luce_gialla.classList.contains('attiva-gialla')){
+
+//         luce_gialla.classList.remove('attiva-gialla');
+
+//         luce_verde.classList.add('attiva-verde');
+//         msg.innerHTML='Verde: Riparti!'
+//     }else{
+//         luce_verde.classList.remove('attiva-verde');
+
+//         luce_rossa.classList.add('attiva-rossa');
+//         msg.innerHTML='Rosso: Stop'
+//     }
+// }
+
+function cambioColore(){
+    luce_rossa.classList.remove('attiva-rossa'); 
+    luce_gialla.classList.remove('attiva-gialla');   
+    luce_verde.classList.remove('attiva-verde');
+
+    if(luceAttuale==='rosso'){
+        luce_gialla.classList.add('attiva-gialla');
+        msg.innerHTML='Giallo: Attenzione!'
+        luceAttuale = 'giallo';
+    }else if(luceAttuale==='giallo'){
+        luce_verde.classList.add('attiva-verde');
+        msg.innerHTML='Verde: Riparti!'
+        luceAttuale = 'verde';
+    }else{
+        luce_rossa.classList.add('attiva-rossa');
+        msg.innerHTML='Rosso: Stop'
+        luceAttuale = 'rosso';
+
+    }
+}
+

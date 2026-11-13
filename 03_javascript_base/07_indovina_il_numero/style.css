@@ -1,0 +1,50 @@
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+
+main{
+    max-width: 400px;
+    background-color: antiquewhite;
+    margin: auto;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+h1{
+    text-align: center;
+}
+#tempo{
+    font-size: 0.8em;
+    text-align: right;
+    margin-right: 10px;
+}
+input{
+    display: block;
+    margin: 5px auto;
+}
+
+button{
+    margin: 10px auto;
+    display: block;
+}
+
+p{
+    text-align: center;
+}
+
+#messaggio{
+    font-size: 0.8em;
+}
+
+#tentativi{
+    font-size: 0.8em;
+    color: gray;
+}
+
+#indovina{
+    font-size: 1.2em;
+    font-weight: bold;
+}

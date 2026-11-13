@@ -1,0 +1,183 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(230, 230, 230);
+    margin: 0;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 1.2em;
+}
+
+#main{
+    background-color: white;
+    /* border: 3px solid red; */
+    max-width: 1200px;
+    width: auto;margin: 15px auto;
+    padding: 60px 50px;
+    
+}
+
+
+/* HEADER */
+
+#header{
+    /* border: 5px solid blueviolet; */
+    display: flex;
+    font-size: 2em;
+    margin: 0;
+    padding: 0 0 40px 0;
+    line-height: 0.9;
+}
+
+h1{
+    width: 50%;
+    margin: 0;
+}
+
+
+h2{
+    width: 50%;
+    margin: 0;
+}
+
+h3{
+    font-size: 1.3em;
+    margin: 40px 0;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+/* FOTO */
+
+#foto{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 50px
+    /* margin-bottom: 50px; */
+}
+
+#foto img{
+    /* display: inline-block; */
+    width: 24.2%;
+}
+
+
+/* WHO */
+
+#who{
+    /* background-color: rgb(69, 69, 212); */
+    padding-bottom: 50px;
+}
+
+.articolo{
+    display: flex;
+    /* border: 5px solid green; */
+}
+
+.articolo img{
+    /* border: 3px solid black; */
+    object-fit: contain;
+    /* display: block; */
+    max-width: 50%;
+    padding: 0 50px 0 0;
+}
+
+.testo{
+    font-size: 1.8em;
+    margin: 0 auto 20px;
+    padding: 0 0 0 40px;
+}
+
+.autore{
+    font-size: 1em;
+    padding: 40px 0 0 40px;
+}
+
+
+
+/* PORTFOLIO */
+
+.container{
+    /* border: 3px solid black; */
+    display: flex;
+    gap: 20px;
+}
+
+#portfolio{
+    /* background-color: aquamarine; */
+    padding-bottom: 50px;
+}
+
+.card{
+    /* border: 3px solid green; */
+    width: 33.3%;
+}
+
+.card img{
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+
+.portfolioTitle{
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 10px 0 5px;
+}
+
+.portfolioAutor{
+    font-size: 1.1em;
+    padding: 0 0 30px 0;
+    /* font-weight: 200; */
+}
+
+.portfolioText{
+    font-style: italic;
+    padding: 0 0 30px 0;
+    font-size: 0.9;
+}
+
+/* CONTACT */
+
+#contact{
+    /* background-color: aqua; */
+    padding-bottom: 50px
+}
+
+.contactItem{
+    display: flex;
+}
+.contactItem img{
+    width: 40%;
+    /* display: flex; */
+    padding: 0 30px 0 0;
+}
+
+.contactList{
+    /* border: 3px solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+
+.contactList ul{
+    padding: 0 10px;
+}
+
+.contactTitle{
+    font-weight: bold;
+    font-size: 2em;
+    padding-bottom: 40px;
+}
+
+.contactText{
+    padding-bottom: 20px;
+    font-size: 0.9em;
+}

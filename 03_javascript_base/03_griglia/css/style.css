@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.lista {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 3rem;
+}
+
+.lista li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  border: 3px solid white;
+  width: calc(100% / 10);
+  height: calc(100vh / 10);
+}
+
+.lista li.ten {
+  background-color: lightsalmon;
+}
+.lista li.even {
+  background-color: lightskyblue;
+}
+.lista li.odd {
+  background-color: lightseagreen;
+}

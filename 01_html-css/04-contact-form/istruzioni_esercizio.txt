@@ -1,0 +1,45 @@
+Devi trasformare in html il layout del modulo presente nel file qui accanto layout_modulo.jpg o layout_modulo.pdf
+
+I colori del modulo.
+
+Colore di background del box principale: #eff0f4
+Colore del bordo del box principale: #c9d3dd
+
+Input e select hanno:
+il colore di background: #fff
+il colore dei bordi: #c9d3dd
+
+Per i testi usa un font sans-serif a tuo piacimento.
+Per quanto riguarda i colori da usare:
+Titoli e label: #3b4754
+Tutti gli altri testi: #798da3
+
+Il background del bottone di invio è: #3b4754
+
+---- puoi decidere, a tuo piacimento, se e come gestire su input, select e button le pseudoclassi hover e/o focus -----
+
+
+INFO SELECT.
+Le select (che sono evidenziate di colore giallo) hanno questi contenuti.
+
+In quella dedicata ai corsi le info al suo interno saranno:
+
+1. campo vuoto
+2. Corso Front End Development	
+3. Corso Back End Developmente
+4. Corso Full Stack Development
+5. Corso Cyber Security Specialist
+6. Non ho ancora la idee chiare
+
+
+Nella select designata per la scelta dell'orario in cui essere ricontattati:
+
+1. campo vuoto
+2. mattina 10.00/13.00
+3. pranzo 13.00/14.00
+4. pomeriggio 15.00/18.00
+5. sera 18.00/20.00
+
+
+
+

@@ -1,0 +1,191 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    
+}
+
+
+
+body{
+    /* border: red 5px solid; */
+    margin:0;
+    /* position: relative; */
+    /* height: 100%; */
+    /* padding-bottom: 0; */
+    
+}
+
+
+h1{
+    background-color: #e8514e;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+main{
+    background-color: white;
+    
+    margin: 0 auto;
+    width: 70%;
+    position: relative;
+    height: 100%;
+    padding-bottom: 20px;
+    font-size: 0.9em;
+}
+
+
+/* MENU */
+
+nav{
+    width: 100%;
+    background-color: #f7d100;
+    position: absolute;
+    z-index: 10;
+    margin-top: 20px;
+}
+
+a{
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    
+    color: #2d57a4;
+}
+
+
+ul{
+    color: #2d57a4;
+    text-transform: uppercase;
+    /* border: 2px solid black; */
+    list-style: none;
+    display: flex;
+    text-align: center;
+    padding: 0;
+    max-width: 100%;
+    margin: 0;
+}
+
+li{
+    width: 20%;
+    font-size: 1em;
+    padding: 0;
+    position: relative;
+}
+
+
+li a:hover{
+    background-color: #2d57a4;
+    color: white;
+}
+
+li:hover > a{
+    background-color: #2d57a4;
+    color: white;
+}
+
+.submenu{
+    text-transform: capitalize;
+    flex-direction: column;
+    width: 100%;
+    background-color: #5071af;
+    position: absolute;
+    display: none;
+    font-size: 0.8em;
+}
+
+.submenu li{
+    width: 100%;
+}
+
+.submenu li:hover{
+    color: white;
+    background-color: #2d57a4;
+}
+
+
+.submenu a{
+    color: white;
+    text-align: start;
+    padding: 10px;
+}
+
+
+
+nav li:hover .submenu{
+    display: flex;
+}
+
+
+.codingDays .submenu{
+    font-size: 1em;
+    left: 100%;
+    top: 0px;
+    
+}
+.codingDays .submenu li{
+    position: absolute;
+    display: none;  
+    
+}
+
+.codingDays:hover  li{
+    display: flex;  
+    position: relative;
+} 
+
+
+/* IMMAGINE */
+
+#banner{
+    padding: 0;
+    position: relative;
+    top: 37px;
+    z-index: 0;
+}
+
+
+img{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: block;
+}
+
+
+
+/* ARTICOLO */
+article{
+    width: 90%;
+    margin: 0 auto;
+    /* position: relative; */
+    padding-top: 50px;
+    line-height: 2em;
+    font-size: 1.2em;
+}
+
+h2{
+    margin: 0;
+    padding: 20px 0 5px 0;
+}
+
+
+/* FOOTER */
+
+footer{
+    position: absolute;
+    background-color: rgb(39, 39, 39);
+    color: white;
+    
+    bottom: 0;
+    width: 100%;
+    
+}
+
+footer p{
+    padding: 5px;
+    margin: 0;
+    text-align: center;
+}
